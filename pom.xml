@@ -14,7 +14,7 @@
     </parent>
     <groupId>com.js9</groupId>
     <artifactId>js9-pet-clinic</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>js9-pet-clinic</name>
     <description>js9 Spring Pet Clinic Project</description>
     <properties>
@@ -49,7 +49,7 @@
 
     <scm>
         <developerConnection>scm:git:git@github.com:ChukwuEmeka1269/js9-pet-clinic.git</developerConnection>
-      <tag>js9-pet-clinic-0.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
 
 </project>

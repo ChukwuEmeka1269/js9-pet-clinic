@@ -2,10 +2,12 @@ package com.js9.js9petclinic.service.mapBasedServiceImpl;
 
 import com.js9.js9petclinic.model.Owner;
 import com.js9.js9petclinic.service.OwnerService;
+import org.springframework.stereotype.Service;
 
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMapImpl extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override

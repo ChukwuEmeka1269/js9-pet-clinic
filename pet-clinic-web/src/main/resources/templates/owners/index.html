@@ -6,7 +6,23 @@
     <title>Owners Index Page</title>
 </head>
 <body>
-    <h1>Owners List....</h1>
-    <p th:text="'Karen White'">Owners name..</p>
+    <h1>List of Pet Owners</h1>
+<!--    <p th:text="'Karen White'">Owners name..</p>-->
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr th:each="owner : ${owners}">
+                <td th:text="${owner.id}">1</td>
+                <td th:text="${owner.firstName}">John</td>
+                <td th:text="${owner.lastName}">Doe</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

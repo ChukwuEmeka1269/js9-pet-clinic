@@ -29,14 +29,14 @@ public class DataInitializer implements CommandLineRunner {
         ownerService.save(owner1);
 
         var owner2 = new Owner();
-        owner2.setId(1L);
+        owner2.setId(2L);
         owner2.setFirstName("Owner2");
         owner2.setLastName("Doe");
 
         ownerService.save(owner2);
 
         var owner3 = new Owner();
-        owner3.setId(1L);
+        owner3.setId(3L);
         owner3.setFirstName("Owner3");
         owner3.setLastName("Doe");
 
@@ -55,14 +55,14 @@ public class DataInitializer implements CommandLineRunner {
         var vet2 = new Vet();
         vet2.setFirstName("Vet2");
         vet2.setLastName("Neo");
-        vet2.setId(1L);
+        vet2.setId(2L);
 
         vetService.save(vet2);
 
         var vet3 = new Vet();
         vet3.setFirstName("Vet3");
         vet3.setLastName("Neo");
-        vet3.setId(1L);
+        vet3.setId(3L);
 
         vetService.save(vet3);
 

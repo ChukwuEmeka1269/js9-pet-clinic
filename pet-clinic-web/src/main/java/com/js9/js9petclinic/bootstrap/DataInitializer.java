@@ -22,21 +22,18 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         var owner1 = new Owner();
-        owner1.setId(1L);
         owner1.setFirstName("Owner1");
         owner1.setLastName("Joe");
 
         ownerService.save(owner1);
 
         var owner2 = new Owner();
-        owner2.setId(2L);
         owner2.setFirstName("Owner2");
         owner2.setLastName("Doe");
 
         ownerService.save(owner2);
 
         var owner3 = new Owner();
-        owner3.setId(3L);
         owner3.setFirstName("Owner3");
         owner3.setLastName("Doe");
 
@@ -48,21 +45,18 @@ public class DataInitializer implements CommandLineRunner {
 
 
         var vet1 = new Vet();
-        vet1.setId(1L);
         vet1.setFirstName("Vet1");
         vet1.setLastName("Neo");
 
         vetService.save(vet1);
 
         var vet2 = new Vet();
-        vet2.setId(2L);
         vet2.setFirstName("Vet2");
         vet2.setLastName("Neo");
 
         vetService.save(vet2);
 
         var vet3 = new Vet();
-        vet3.setId(3L);
         vet3.setFirstName("Vet3");
         vet3.setLastName("Neo");
 

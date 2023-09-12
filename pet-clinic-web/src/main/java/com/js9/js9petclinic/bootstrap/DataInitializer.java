@@ -42,31 +42,37 @@ public class DataInitializer implements CommandLineRunner {
 
         ownerService.save(owner3);
 
+        ownerService.findAll().forEach(System.out::println);
+
         System.out.println("Owners Loaded.......");
 
 
         var vet1 = new Vet();
+        vet1.setId(1L);
         vet1.setFirstName("Vet1");
         vet1.setLastName("Neo");
-        vet1.setId(1L);
 
         vetService.save(vet1);
 
         var vet2 = new Vet();
+        vet2.setId(2L);
         vet2.setFirstName("Vet2");
         vet2.setLastName("Neo");
-        vet2.setId(2L);
 
         vetService.save(vet2);
 
         var vet3 = new Vet();
+        vet3.setId(3L);
         vet3.setFirstName("Vet3");
         vet3.setLastName("Neo");
-        vet3.setId(3L);
 
         vetService.save(vet3);
 
         System.out.println("Vets Loaded.........");
+
+        System.out.println("Vets.........");
+
+        vetService.findAll().forEach(System.out::println);
 
 
 

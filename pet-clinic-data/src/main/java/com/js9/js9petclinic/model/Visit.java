@@ -5,10 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
+import java.time.LocalDate;
+
 @AllArgsConstructor
 @NoArgsConstructor
-public class PetType extends BaseEntity{
-    private String name;
+@Getter
+@Setter
+public class Visit extends BaseEntity{
+    private LocalDate date;
+    private String description;
+    private Pet pet;
 }

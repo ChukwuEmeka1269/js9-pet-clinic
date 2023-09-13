@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"  xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
 <head>
     <meta charset="UTF-8">
     <title>Owners Index Page</title>
@@ -8,12 +8,12 @@
 <body>
     <h1>List of Pet Owners</h1>
     <!--/*@thymesVar id="vet" type="com.js9.js9petclinic.model.Owner"*/-->
-    <table>
+    <table  class="table table-striped">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>FirstName</th>
-                <th>LastName</th>
+                <th style="width: 150px;">Id</th>
+                <th style="width: 150px;">FirstName</th>
+                <th style="width: 150px;">LastName</th>
             </tr>
         </thead>
         <tbody >

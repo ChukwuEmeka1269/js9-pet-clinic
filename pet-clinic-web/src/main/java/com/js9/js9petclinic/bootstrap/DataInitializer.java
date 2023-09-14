@@ -1,11 +1,9 @@
 package com.js9.js9petclinic.bootstrap;
 
-import com.js9.js9petclinic.model.Owner;
-import com.js9.js9petclinic.model.Pet;
-import com.js9.js9petclinic.model.PetType;
-import com.js9.js9petclinic.model.Vet;
+import com.js9.js9petclinic.model.*;
 import com.js9.js9petclinic.service.OwnerService;
 import com.js9.js9petclinic.service.PetTypeService;
+import com.js9.js9petclinic.service.SpecialtyService;
 import com.js9.js9petclinic.service.VetService;
 
 import org.springframework.boot.CommandLineRunner;
@@ -22,19 +20,37 @@ public class DataInitializer implements CommandLineRunner {
 
     private final PetTypeService petTypeService;
 
-    public DataInitializer(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
+    private final SpecialtyService specialtyService;
+
+    public DataInitializer(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.specialtyService = specialtyService;
     }
 
     @Override
     public void run(String... args) throws Exception {
 
+        int petTypeCount = petTypeService.findAll().size();
+
+        if(petTypeCount == 0){
+            loadData();
+        }
+    }
+
+    private void loadData() {
         var cat = new PetType("Cat");
         PetType saveCatPetType = petTypeService.save(cat);
         var dog = new PetType("Dog");
         PetType savedDogPetType = petTypeService.save(dog);
+
+        var surgery = new Specialty("Surgery");
+        Specialty savedSurgerySpecialty = specialtyService.save(surgery);
+        var radiology = new Specialty("Radiology");
+        Specialty savedRadiologySpecialty = specialtyService.save(radiology);
+        var dentistry = new Specialty("Dentistry");
+        Specialty savedDentistrySpecialty = specialtyService.save(dentistry);
 
 
         var owner1 = new Owner();
@@ -80,18 +96,21 @@ public class DataInitializer implements CommandLineRunner {
         var vet1 = new Vet();
         vet1.setFirstName("Vet1");
         vet1.setLastName("Neo");
+        vet1.getSpecialties().add(savedDentistrySpecialty);
 
         vetService.save(vet1);
 
         var vet2 = new Vet();
         vet2.setFirstName("Vet2");
         vet2.setLastName("Neo");
+        vet2.getSpecialties().add(savedRadiologySpecialty);
 
         vetService.save(vet2);
 
         var vet3 = new Vet();
         vet3.setFirstName("Vet3");
         vet3.setLastName("Neo");
+        vet3.getSpecialties().add(savedSurgerySpecialty);
 
         vetService.save(vet3);
 
@@ -100,9 +119,5 @@ public class DataInitializer implements CommandLineRunner {
         System.out.println("Vets.........");
 
         vetService.findAll().forEach(System.out::println);
-
-
-
-
     }
 }

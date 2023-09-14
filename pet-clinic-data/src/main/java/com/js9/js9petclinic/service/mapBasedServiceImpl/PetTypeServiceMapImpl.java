@@ -2,9 +2,11 @@ package com.js9.js9petclinic.service.mapBasedServiceImpl;
 
 import com.js9.js9petclinic.model.PetType;
 import com.js9.js9petclinic.service.PetTypeService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class PetTypeServiceMapImpl extends AbstractMapService<PetType, Long> implements PetTypeService {
     @Override
     public Set<PetType> findAll() {
